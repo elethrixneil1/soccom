@@ -21,7 +21,10 @@ const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0
 const order = s => ((s.day + 1) % 7) * 1440 + +s.time.slice(0, 2) * 60 + +s.time.slice(3);
 const fmtT = t => { const [h, m] = t.split(':').map(Number); return (h % 12 || 12) + ':' + String(m).padStart(2, '0') + (h < 12 ? ' AM' : ' PM'); };
 const weekKey = () => { const x = new Date(); x.setHours(0, 0, 0, 0); x.setDate(x.getDate() + (6 - x.getDay() + 7) % 7); return iso(x); };
-
+const save = () => { 
+  fs.writeFileSync(FILE + '.tmp', JSON.stringify(db)); 
+  fs.renameSync(FILE + '.tmp', FILE); 
+};
 function freshDb() {
   const pw = process.env.ADMIN_PASSWORD || tempPw();
   const db = {
