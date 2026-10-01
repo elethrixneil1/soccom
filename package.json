@@ -1,0 +1,17 @@
+{
+  "name": "socom-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-session": "^2.1.0",
+    "docx": "^8.5.0",
+    "express": "^4.19.2"
+  }
+}

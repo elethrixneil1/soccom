@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login · SOCOM Scheduler</title>
+    <link rel="icon" href="logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login">
+    <main class="card">
+        <img class="logo" src="logo.jpg" alt="Holy Cross Parish Social Communications Ministry logo">
+        <h1>SOCOM Scheduler</h1>
+        <p class="muted">Sign in to see your weekend assignments.</p>
+        <form id="loginForm" action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+            <p id="err" class="error" role="alert"></p>
+            <button type="submit">Sign in</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
